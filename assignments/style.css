@@ -118,6 +118,14 @@ header > a {
     margin-top: 20px;
 }
 
+.centre {
+    text-align: center;
+}
+
+.thisisvpn {
+    height: 250px;
+}
+
 @media only print {
     #header {
         display: block;
@@ -170,5 +178,10 @@ header > a {
 
     .nottoprint {
         display: none;
+    }
+
+    .thisisvpn {
+        margin-top: 20px;
+        height: 170px;
     }
 }
