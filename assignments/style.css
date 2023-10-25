@@ -122,11 +122,31 @@ header > a {
     text-align: center;
 }
 
+.imgtxt {
+    margin: 50px 0px;
+}
+
 .thisisvpn {
     height: 250px;
 }
 
+.container > a:hover {
+    opacity: 80%;
+}
+
+.container > a {
+    transition: 0.15s;
+}
+
 @media only print {
+    .logo, .learninghead, .learninghead2, .learninghead3 {
+        color: black;
+    }
+
+    .learningtext, .learninglisting {
+        color: rgb(70, 70, 70)
+    }
+
     #header {
         display: block;
     }
@@ -178,6 +198,10 @@ header > a {
 
     .nottoprint {
         display: none;
+    }
+
+    .imgtxt {
+        margin: 20px 0px;
     }
 
     .thisisvpn {
