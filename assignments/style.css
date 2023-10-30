@@ -133,12 +133,26 @@ header > a {
     height: 250px;
 }
 
+.thisisosi {
+    height: 420px;
+}
+
 .container > a:hover {
     opacity: 80%;
 }
 
 .container > a {
     transition: 0.15s;
+}
+
+.normaltext {
+    margin-top: 50px;
+    color: white;
+    font-family: "SourceSans";
+}
+
+.normaltext > a {
+    color:#339ae8;
 }
 
 @media only print {
@@ -210,5 +224,71 @@ header > a {
     .thisisvpn {
         margin-top: 20px;
         height: 170px;
+    }
+
+    .thisisosi {
+        margin-top: 20px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    header {
+        padding: 15px 50px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .linkssection {
+        margin: 20px 30px;
+    }
+    .learningheader {
+        padding: 50px;
+    }
+
+    .container {
+        margin: 20px;
+    }
+
+    .learninghead {
+        font-size: 30px;
+    }
+
+    .learninghead2 {
+        font-size: 25px;
+    }
+
+    .learninghead3 {
+        font-size: 18px;
+    }
+
+    .learningtext {
+        font-size: 14px;
+    }
+
+    .printnotice {
+        display: none;
+    }
+
+    .learninglisting {
+        margin-left: 30px;
+        font-size: 14px;
+    }
+
+    .normaltext {
+        margin: 50px 20px;
+        font-size: 14px;
+    }
+
+    .thisisvpn {
+        margin-top: 20px;
+        height: 100px;
+    }
+
+    .thisisosi {
+        margin-top: 20px;
+        height: 150px;
     }
 }
