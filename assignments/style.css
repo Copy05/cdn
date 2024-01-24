@@ -133,6 +133,11 @@ header > a {
     height: 250px;
 }
 
+.thisisdns {
+    height: 320px;
+
+}
+
 .thisisosi {
     height: 420px;
 }
@@ -230,6 +235,11 @@ header > a {
         margin-top: 20px;
         height: 300px;
     }
+
+    .thisisdns {
+        margin-top: 20px;
+        height: 230px;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -290,5 +300,10 @@ header > a {
     .thisisosi {
         margin-top: 20px;
         height: 150px;
+    }
+
+    .thisisdns {
+        margin-top: 20px;
+        height: 130px;
     }
 }
