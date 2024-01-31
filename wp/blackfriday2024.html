@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Friday 2024 Countdown</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <style>
+        @font-face {
+            font-family: "EMSans";
+            src: url('../fonts/New\ Super\ Mario\ Font\ U.ttf');
+        }
+
+        #countdown {
+            transform: translate(-50%, -50%);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        #countdown > p {
+            transition: all 0.5s ease;
+            display: inline-block;
+            margin: 0px 30px;
+            font-family: "EMSans";
+            color: white;
+            font-size: 140px;
+        }
+
+        .title {
+            font-family: "EMSans";
+            color: rgb(30, 30, 30);
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        @media only screen and (max-width: 500px) {
+            #countdown > p {
+                font-size: 25px;
+                margin: 0px 5px;
+            }
+        }
+
+    </style>
+
+    <p class="title">Black Friday 2024</p>
+
+    <div id="countdown">
+        <p id="days"></p>
+        <p id="hours"></p>
+        <p id="minutes"></p>
+        <p id="seconds"></p>
+    </div>
+
+    <script>
+        const dd = document.getElementById('days')
+        const dh = document.getElementById('hours')
+        const dm = document.getElementById('minutes')
+        const ds = document.getElementById('seconds')
+
+        const CurrentYear = new Date().getFullYear();
+        const NewYear = new Date(`Nov 29, ${CurrentYear} 00:00:00`);
+
+function CheckCond(){
+    if(dd.innerText == 0){
+        dd.style.display = "none"
+    }
+    if(dd.innerText == 0 && dh.innerText == 0){
+        dh.style.display = "none"
+    }
+    if(dd.innerText == 0 && dh.innerText == 0 && dm.innerText == 0){
+        dm.style.display = "none"
+        ds.style.color = "#eb4034"
+    }
+    if(dd.innerText == 0 && dh.innerText == 0 && dm.innerText == 0 && ds.innerText < 10){
+        ds.style.color = "#ff8800"
+    }
+    if(dd.innerText == 0 && dh.innerText == 0 && dm.innerText == 0 && ds.innerText == 0){
+        ds.style.display = "none"
+        clearInterval(c);
+    }
+}
+
+var c = setInterval(() => {
+    var now = new Date();
+    var distance = NewYear - now;
+
+    var d = Math.floor(distance / 1000 / 60 / 60 / 24);
+    var h = Math.floor(distance / 1000 / 60 / 60) % 24;
+    var m = Math.floor(distance / 1000 / 60) % 60;
+    var s = Math.floor(distance / 1000) % 60;
+
+    dd.innerText = d;
+    dh.innerText = h < 10 ? "0" + h : h;
+    dm.innerText = m < 10 ? "0" + m : m;
+    ds.innerText = s < 10 ? "0" + s : s;
+
+    CheckCond()
+}, 1000)
+    </script>
+
+</body>
+</html>
