@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DVD Screensaver</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+    }
+
+    .dvd-logo {
+      position: absolute;
+      width: 100px; /* Set your logo size */
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Generate a random color
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Function to create a new DVD logo
+    function createDVDLogo(x, y) {
+      const dvdLogo = document.createElement('div');
+      dvdLogo.className = 'dvd-logo';
+      dvdLogo.style.left = x + 'px';
+      dvdLogo.style.top = y + 'px';
+      dvdLogo.style.backgroundColor = getRandomColor();
+      document.body.appendChild(dvdLogo);
+      return dvdLogo;
+    }
+
+    // Set initial positions and speeds
+    let logos = [];
+    let speedsX = [5, -5]; // Initial speeds for X-axis
+    let speedsY = [5, 5];  // Initial speeds for Y-axis
+    let spawnMode = false; // Flag to activate/deactivate spawning
+
+    // Create initial logos
+    logos.push(createDVDLogo(0, 0));
+
+    // Update positions and check for collisions
+    function update() {
+      for (let i = 0; i < logos.length; i++) {
+        logos[i].style.left = (parseFloat(logos[i].style.left) + speedsX[i]) + 'px';
+        logos[i].style.top = (parseFloat(logos[i].style.top) + speedsY[i]) + 'px';
+
+        // Check for collisions with the screen edges
+        if (parseFloat(logos[i].style.left) + 100 > window.innerWidth || parseFloat(logos[i].style.left) < 0) {
+          speedsX[i] = -speedsX[i];
+          logos[i].style.backgroundColor = getRandomColor();
+
+          if (spawnMode) {
+            // Spawn a new DVD logo when in spawn mode
+            logos.push(createDVDLogo(Math.random() * window.innerWidth, Math.random() * window.innerHeight));
+            speedsX.push(5); // Set initial speed for X-axis
+            speedsY.push(5); // Set initial speed for Y-axis
+          }
+        }
+
+        if (parseFloat(logos[i].style.top) + 100 > window.innerHeight || parseFloat(logos[i].style.top) < 0) {
+          speedsY[i] = -speedsY[i];
+          logos[i].style.backgroundColor = getRandomColor();
+
+          if (spawnMode) {
+            // Spawn a new DVD logo when in spawn mode
+            logos.push(createDVDLogo(Math.random() * window.innerWidth, Math.random() * window.innerHeight));
+            speedsX.push(5); // Set initial speed for X-axis
+            speedsY.push(5); // Set initial speed for Y-axis
+          }
+        }
+      }
+
+      // Repeat the update function
+      requestAnimationFrame(update);
+    }
+
+    // Event listener for the "n" key press
+    window.addEventListener('keydown', function (event) {
+      if (event.key === 'n') {
+        // Create a new DVD logo at a random position
+        logos.push(createDVDLogo(Math.random() * window.innerWidth, Math.random() * window.innerHeight));
+        speedsX.push(5); // Set initial speed for X-axis
+        speedsY.push(5); // Set initial speed for Y-axis
+      }
+
+      // Event listener for the "d" key press to toggle spawn mode
+      if (event.key === 'd') {
+        spawnMode = !spawnMode;
+      }
+    });
+
+    // Start the animation
+    update();
+  </script>
+</body>
+</html>
