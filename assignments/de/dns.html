@@ -25,6 +25,26 @@
         <p class="learninghead3">Wie funktioniert der DNS?</p>
         <p class="learningtext">Das DNS kann man wie ein Internet-Telefonbuch vorstellen. Beim Besuch einer Website übersetzt es den Hostname (z.B www.example.com) in eine für Computer verständliche IP-Adresse (z. B. 192.168.1.1) umgewandelt, damit Geräte die Website finden können. Der DNS Server erhält die Anfrage und sucht. Falls es nicht gefunden hat wird es bei anderen DNS Server weitergeleitet. Falls der Eintrag nirgendswo gefunden wurde heißst es die Seite wurde nicht gefunden oder existiert nicht.</p>
 
+        <p class="learninghead3">Wie funktioniert DNS genauer</p>
+        <p class="learningtext">Das obere gezeigte inhalt ist die kurz version für DNS aber Der DNS Vorgang ist noch länger als das man nur einen DNS server checkt. Als erstes wird der Lokaler DNS Server gecheckt ob es die Seite Kennt</p>
+
+        <p class="centre imgtxt"><img src="../../content/learning/DNS_STEP1.png" alt="DNS_STEP_1" class="thisisdns-steps"></p>
+
+        <p class="learningtext">Falls Nicht dann frägt der Lokaler DNS Server Den Internet Anbieter auch english genannt Internet Service Provider (kurz: ISP)</p>
+        <p class="centre imgtxt"><img src="../../content/learning/DNS_STEP2.png" alt="DNS_STEP_2" class="thisisdns-steps"></p>
+
+        <p class="learningtext">Wenn der ISP die Seite auch nicht kennt dann frägt es den DNS Root-Server es gibt <a class="learning-redirect-link" href="https://www.iana.org/domains/root/servers">13 Stück davorn und wird von amerikanische Regierungen, Universitäten, etc..</a> verwaltet</p>
+        <p class="centre imgtxt"><img src="../../content/learning/DNS_STEP3.png" alt="DNS_STEP_3" class="thisisdns-steps"></p>
+        <p class="learningtext">Der Root server antwortet mit der IP Addresse vom Nameserver das für die ".com" TLD (Top Level Domain) Zuständig ist und dann wird dort gefragt ob es die seite kennt.</p>
+        <p class="centre imgtxt"><img src="../../content/learning/DNS_STEP4.png" alt="DNS_STEP_4" class="thisisdns-steps"></p>
+        <p class="learningtext">Der TLD server antwortet mit der IP Addresse vom Nameserver wo die seite gespeichert ist in dem beispiel Cloudflare. dann wird dort letztes mal gefragt ob es die seite kennt</p>
+        <p class="centre imgtxt"><img src="../../content/learning/DNS_STEP5.png" alt="DNS_STEP_5" class="thisisdns-steps"></p>
+        <p class="learningtext">Der Nameserver antwortet mit der IP von der seite. falls es nicht die seite findet dann kommt "404 NOT FOUND" also die seite wurde nicht gefunden.</p>
+
+        <p class="learninghead3">DNS Eigenschaften</p>
+        <p class="learningtext">Jeder DNS Eintrag haben eigenschaften. Es gibt viele eigendschaften da viele nicht so wichtig sind sind hier die 5 Wichtigsten DNS Eigenschaften.</p>
+        <p class="centre imgtxt"><img src="../../content/learning/DNS-Props.png" alt="DNS" class="thisisdns-props"></p>
+
         <p class="learninghead3">Nachteile</p>
         <p class="learningtext">Trotz seiner Effizienz kann das DNS Sicherheitsprobleme verursachen, wie z.B. DNS-Spoofing, bei dem falsche IP-Adressen bereitgestellt werden. Da DNS bis heute noch keine Sicherheitschecks hat.</p>
     </div>

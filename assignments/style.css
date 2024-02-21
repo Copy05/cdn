@@ -139,7 +139,14 @@ header > a {
 
 .thisisdns {
     height: 320px;
+}
 
+.thisisdns-props {
+    height: 250px;
+}
+
+.thisisdns-steps {
+    height: 150px;
 }
 
 .thisisosi {
@@ -240,9 +247,17 @@ header > a {
         height: 300px;
     }
 
-    .thisisdns {
+    .thisisdns, .thisisdns-steps, .thisisdns-props {
         margin-top: 20px;
         height: 230px;
+    }
+
+    .thisisdns-props {
+        height: 180px;
+    }
+
+    .thisisdns-steps {
+        height: 130px;
     }
 }
 
@@ -306,8 +321,17 @@ header > a {
         height: 150px;
     }
 
-    .thisisdns {
+    .thisisdns, .thisisdns-steps, .thisisdns-props {
         margin-top: 20px;
         height: 130px;
     }
+
+    .thisisdns-props {
+        height: 100px;
+    }
+
+    .thisisdns-steps {
+        height: 90px;
+    }
+    
 }
