@@ -33,7 +33,7 @@ header {
     padding: 20px 80px;
 }
 
-header > a:hover, .learninglink:hover {
+header > a:hover, .learninglink:hover, .learning-redirect-link:hover {
     opacity: 80%;
 }
 
@@ -78,7 +78,7 @@ header > a {
 .learninghead3 {
     font-size: 20px;
     text-align: left;
-    margin: 60px 0px 0px 0px;
+    margin: 50px 0px 0px 0px;
 }
 
 .learningtext {
@@ -109,12 +109,16 @@ header > a {
     margin: 10px 0px;
 }
 
-.learninglink {
+.learninglink, .learning-redirect-link {
     font-weight: bold;
     font-family: "SourceSans";
     text-decoration: none;
     transition: 0.2s;
     color:#339ae8;
+}
+
+.learning-redirect-link {
+    font-weight: normal;
 }
 
 .cclicense {
@@ -202,7 +206,7 @@ header > a {
     }
 
     .learninghead3 {
-        margin-top: 45px;
+        margin-top: 30px;
     }
 
     .learninghead2 {
