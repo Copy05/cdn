@@ -18,6 +18,11 @@
     src: url('../fonts/New\ Super\ Mario\ Font\ U.ttf');
 }
 
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url('../fonts/IBMPlexSans-Regular.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -102,19 +107,30 @@ header > a {
 }
 
 .linkssection {
-    margin: 30px 100px;
+    padding: 0px 80px;
+    border-bottom: 1px solid rgb(51, 55, 57);
+    padding-bottom: 20px;
+    margin: 0px 70px;
 }
+
+.theletter {
+    color: rgb(160, 152, 139);
+    font-size: 32px;
+    font-family: "IBM Plex Sans";
+    margin: 10px -80px;
+}
+
 
 .linkk {
     margin: 10px 0px;
 }
 
 .learninglink, .learning-redirect-link {
-    font-weight: bold;
-    font-family: "SourceSans";
+    font-family: "IBM Plex Sans";
+    color: rgb(36, 144, 254);
+    font-size: 16px;
     text-decoration: none;
     transition: 0.2s;
-    color:#339ae8;
 }
 
 .learning-redirect-link {
