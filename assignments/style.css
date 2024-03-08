@@ -23,6 +23,12 @@
     src: url('../fonts/IBMPlexSans-Regular.ttf');
 }
 
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url('../fonts/IBMPlexSans-Bold.ttf');
+    font-weight: bold;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -193,11 +199,12 @@ header > a {
     }
 
     .learningtext, .learninglisting {
-        color: rgb(70, 70, 70)
+        color: rgb(30, 30, 30)
     }
 
     #header {
         display: block;
+        padding: 0;
     }
 
     .nav_links {
@@ -205,6 +212,7 @@ header > a {
     }
 
     .logo {
+        font-size: 20px;
         text-align: right;
     }
 
@@ -221,6 +229,7 @@ header > a {
     }
 
     .learningtext, .learninghead2, .learninghead3 {
+        font-family: "IBM Plex Sans";
         text-align: left;
     }
 
@@ -228,21 +237,28 @@ header > a {
         margin: 20px 20px;
     }
 
-    .learninghead3 {
-        margin-top: 30px;
+    .learninghead2 {
+        font-size: 30px;
+        color: rgb(100, 100, 100)
     }
 
-    .learninghead2 {
-        margin-top: 20px;
+    .learninghead3 {
         font-size: 25px;
+        color: rgb(100, 100, 100)
     }
 
     .learninghead {
-        font-size: 32px;
+        font-size: 38px;
+        font-family: "IBM Plex Sans";
+        color: rgb(100, 100, 100)
     }
 
     .learningtext {
         font-size: 15px;
+    }
+
+    .learningtext > b {
+        font-family: "IBM Plex Sans" !important;
     }
 
     .nottoprint {
