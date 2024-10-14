@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "Inter";
+    src: url('../fonts/Inter-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url('../fonts/Inter-Bold.ttf');
+    font-weight: bold;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.faq-link {
+    color: #3485ff;
+    transition: 0.15s;
+}
+
+.faq-link:hover {
+    filter: brightness(85%);
+}
+
+body {
+    margin: 100px;
+    background: rgb(20, 20, 20);
+    color: white;
+    font-family: "Inter";
+}
+
+.faq-head {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.faq-description {
+    font-size: 14px;
+    color: rgb(160, 160, 160);
+}
+
+.faq-item {
+    margin: 30px 0;
+}
+
+.faq-question {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.faq-answer {
+    font-size: 14px;
+    color: rgb(160, 160, 160);
+}
+
+@media screen and (max-width:1200px){
+    body {
+        margin: 80px 30px;
+    }
+}
